@@ -1,3 +1,25 @@
+class Solution(object):
+    def rotate(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: None Do not return anything, modify matrix in-place instead.
+        """
+               
+        n = len(matrix[0])
+        for i in range (n/2):   #only for cycles, outside square and inside square in case of 4x4 matrix
+            for j in range (i,n-1-i):
+                temp = matrix[i][j]
+                matrix[i][j] = matrix[n-1-j][i]
+                matrix[n-1-j][i] = matrix[n-1-i][n-1-j]
+                matrix[n-1-i][n-1-j] = matrix[j][n-1-i]
+                matrix[j][n-1-i] = temp
+        
+        #n/2 - if n is 3, 1 cycle. square matrix
+        # init tech
+        # 00 02 22 20 = 02 22 20 00
+        # 01 12 21 10 = 12 21 10 01
+        #rep: n = 4. j range(0,3) 00=30, 30=33, 33=03, 03=00 and 
+        #            j range(1,2) 11=21, 21=22, 22=12, 12=11. End range of j shrinks at each iteration.
 """
 You are given an n x n 2D matrix representing an image.
 
@@ -39,27 +61,4 @@ rotate the input matrix in-place such that it becomes:
   [12, 6, 8, 9],
   [16, 7,10,11]
 ]
-"""
-
-class Solution(object):
-    def rotate(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: None Do not return anything, modify matrix in-place instead.
-        """
-               
-        n = len(matrix[0])
-        for i in range (n/2):   #only for cycles, outside square and inside square in case of 4x4 matrix
-            for j in range (i,n-1-i):
-                temp = matrix[i][j]
-                matrix[i][j] = matrix[n-1-j][i]
-                matrix[n-1-j][i] = matrix[n-1-i][n-1-j]
-                matrix[n-1-i][n-1-j] = matrix[j][n-1-i]
-                matrix[j][n-1-i] = temp
-        
-        #n/2 - if n is 3, 1 cycle. square matrix
-        # init tech
-        # 00 02 22 20 = 02 22 20 00
-        # 01 12 21 10 = 12 21 10 01
-        #rep: n = 4. j range(0,3) 00=30, 30=33, 33=03, 03=00 and 
-        #            j range(1,2) 11=21, 21=22, 22=12, 12=11. End range of j shrinks at each iteration.
+"""        
