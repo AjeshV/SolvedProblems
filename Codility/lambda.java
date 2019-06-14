@@ -20,9 +20,9 @@ class Solution {
                             missing = A[i]+1;
                     }else //continuous +ve sequence 
                         missing = A[i+1]+1;
-    			      }
-    			  return missing;
+    		}
+    		return missing;
             }
-		    }
+	}
     }
 }
