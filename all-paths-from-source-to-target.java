@@ -16,13 +16,13 @@ working:
 dfs(graph, 0, allpaths, path);
 	dfs(graph, 1, allpaths, path);		//path {0,1} allpaths{}
 		dfs(graph, 3, allpaths, path);	//path {0,1,3} allpaths{{0,1,3}}
-										                //path {0,1}
-										                //path {0}
-										              //for loop's nextNode.
+						//path {0,1}
+						//path {0}
+					      //for loop's nextNode.
 	dfs(graph, 2, allpaths, path);		//path {0,2} allpaths{{0,1,3}}
 		dfs(graph, 3, allpaths, path);	//path {0,2,3} allpaths{{0,1,3}, {0,2,3}}
-										                //path {0,2}
-										                //path {0}
+						//path {0,2}
+						//path {0}
 */    
     private void dfs(int[][] graph, int node, List<List<Integer>> allpaths, List<Integer> path){
         if (node == graph.length-1){
