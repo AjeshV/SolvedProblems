@@ -14,7 +14,7 @@ public class Solution {
 				}
 				if (current > count) count = current;
 			}	
-	    }
-	    System.out.println(count);
+	    	}
+	    	System.out.println(count);
 	}
 }
