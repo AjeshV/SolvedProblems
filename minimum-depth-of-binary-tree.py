@@ -12,5 +12,5 @@ class Solution(object):
         :rtype: int
         """
         if root == None: return 0
-        if root.left == None or root.right == None: return 1 + self.minDepth(root.left) + self.minDepth(root.right)
+        if root.left == None or root.right == None: return 1 + self.minDepth(root.left) + self.minDepth(root.right) # None zeroed in sum
         return 1 + min(self.minDepth(root.left), self.minDepth(root.right))
