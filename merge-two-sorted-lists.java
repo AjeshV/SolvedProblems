@@ -21,7 +21,7 @@ class Solution {
             }
             dummy = dummy.next;
         }
-        
+        // if any one of the list is null
         if (l1 != null) {
             dummy.next = l1;
         } else {
