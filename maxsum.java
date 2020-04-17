@@ -1,6 +1,3 @@
-// Microsoft | OA 2019 | Max Sum Formed by Any 2 Numbers
-// https://leetcode.com/discuss/interview-question/365872/Microsoft-or-OA-2019-or-Max-Sum-Formed-by-Any-2-Numbers
-
 package solvedproblems;
 
 import java.util.HashMap;
